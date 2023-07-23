@@ -1,0 +1,351 @@
+.titulo {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 30px;
+
+}
+
+body {
+  background: gray;
+}
+
+#alumno_id {
+  background: silver;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+#alumno_id:focus {
+  border-color: rgb(0, 75, 150);
+}
+
+#alumno_id:hover {
+  border-color: rgb(0, 0, 0);
+}
+
+#btnRead {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btnRead:hover {
+  background-color: #45a049;
+}
+
+#btnRead:active {
+  background-color: #3e8e41;
+}
+
+#btnAdd {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btnAdd:hover {
+  background-color: #45a049;
+}
+
+#btnAdd:active {
+  background-color: #3e8e41;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+
+table td {
+  border: none;
+
+}
+
+.btnAcciones:hover {
+  background-color: #1a1a1a;
+}
+
+.btnAcciones {
+  text-align: center;
+}
+
+#btnEdit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#btnEdit:hover {
+  background-color: #0056b3;
+}
+
+#btnEdit:active {
+  background-color: #003f7f;
+}
+
+.btnDelet {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btnDelet:hover {
+  background-color: #c82333;
+}
+
+.btnDelet:active {
+  background-color: #bd2130;
+}
+
+.aId {
+  text-align: center;
+}
+
+.aClave {
+  text-align: center;
+}
+
+.aMatricula {
+  text-align: center;
+}
+
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+th {
+  background-color: #2c2c2c;
+  color: #1d8d0e;
+}
+
+td:hover {
+  background-color: #2e2e2e;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr {
+
+  background-color: #1a1a1a;
+  color: rgb(175, 175, 175);
+}
+
+td {
+  background-color: #1a1a1a;
+}
+
+.form-content {
+  padding: 25px;
+  border-radius: 8px;
+  position: relative;
+  background: #ffffff;
+  max-width: 300px;
+  margin: 1.75rem auto;
+}
+
+.form-content .control {
+  padding: 5px 0;
+}
+
+.form-content .form-footer {
+  margin-top: 8px;
+}
+
+label {
+  width: 70px;
+  display: inline-block;
+}
+
+#modalAdd {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+#modalEdit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+.form-content {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-close-form {
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.form-body {
+  margin-bottom: 20px;
+}
+
+.control {
+  margin-bottom: 15px;
+}
+
+label.modalLab {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #1d8d0e;
+}
+
+input.modalInp {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+  padding-right: 1px;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button.modalCanc,
+button.modalEdit,
+button.modalUpdate {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+button.modalUpdate {
+  background-color: #007bff;
+}
+
+button.modalCanc {
+  background-color: #777;
+}
+
+button.modalEdit {
+  background-color: #007bff;
+}
+
+#modalConfirm {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.tituloConf {
+  color: #000000;
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.confirmacionP {
+  font-weight: bold;
+  color: #000000;
+  font-size: 14px;
+}
+
+button.btnNo,
+button.btnSi {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  width: 70px;
+}
+
+button.btnNo {
+  background-color: #007bff;
+}
+
+button.btnSi {
+  background-color: #dc3545;
+}
+
+@media screen and (max-width: 979px) {
+  #btnEdit {
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .btnDelet {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+}

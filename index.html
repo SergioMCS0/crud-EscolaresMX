@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="titulo">CRUD ALUMNOS</h1>
+    <input type="text" placeholder="Digite el ID del Alumno" id="alumno_id">
+    <button type="button" onclick="getAlumno()" id="btnRead">Consultar</button>
+
+    <button type="button" id="btnAdd">Agregar Alumno</button>
+
+    <div class="modal" id="modalAdd">
+        <div class="form-content">
+            <div class="btn-close-form" onclick="closeModalAdd()">X</div>
+            <div class="form-body">
+                <form id="formAdd">
+                    <div class="control">
+                        <label class="modalLab">Clave: </label>
+                        <input class="modalInp" type="text" name="clave" oninput="validateClave()">
+                        <span class="error-msg" id="claveError"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Matricula: </label>
+                        <input class="modalInp" type="text" name="matricula" oninput="validateMatricula()">
+                        <span class="error-msg" id="matriculaError"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Apellido paterno: </label>
+                        <input class="modalInp" type="text" name="paterno" oninput="validatePaterno()">
+                        <span class="error-msg" id="paternoError"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Apellido Materno: </label>
+                        <input class="modalInp" type="text" name="materno" oninput="validateMaterno()">
+                        <span class="error-msg" id="maternoError"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Nombre: </label>
+                        <input class="modalInp" type="text" name="nombre" oninput="validateNombre()">
+                        <span class="error-msg" id="nombreError"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="form-footer">
+                <button class="modalCanc" type="button" onclick="closeModalAdd()">Cancelar</button>
+                <button class="modalEdit" type="button" onclick="createAlumno()">Guardar</button>
+            </div>
+            <span id="msgFormAdd" class="msg-error"></span>
+        </div>
+    </div>
+    
+
+    <div class="modal" id="modalEdit">
+        <div class="form-content">
+            <div class="btn-close-form" onclick="closeModalEdit()">X</div>
+            <div class="form-body">
+                <form id="formEdit">
+                    <input type="hidden" id="id">
+                    <div class="control">
+                        <label class="modalLab">Clave: </label>
+                        <input class="modalInp" type="text" name="clave" id="clave">
+                        <span id="claveErrorEdit" class="msg-error"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Matricula: </label>
+                        <input class="modalInp" type="text" name="matricula" id="matricula">
+                        <span id="matriculaErrorEdit" class="msg-error"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Apellido paterno: </label>
+                        <input class="modalInp" type="text" name="paterno" id="paterno">
+                        <span id="paternoErrorEdit" class="msg-error"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Apellido Materno: </label>
+                        <input class="modalInp" type="text" name="materno" id="materno">
+                        <span id="maternoErrorEdit" class="msg-error"></span>
+                    </div>
+                    <div class="control">
+                        <label class="modalLab">Nombre: </label>
+                        <input class="modalInp" type="text" name="nombre" id="nombre">
+                        <span id="nombreErrorEdit" class="msg-error"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="form-footer">
+                <button class="modalCanc" type="button" onclick="closeModalEdit()">Cancelar</button>
+                <button class="modalUpdate" type="button" onclick="UpdateAlumno()">Guardar cambios</button>
+            </div>
+            <span id="msgFormEdit" class="msg-error"></span>
+        </div>
+    </div>
+    
+    
+    
+
+    <div class="modal" id="modalConfirm">
+        <div class="form-content">
+            <div class="btn-close-form" onclick="closeModalConfirm()">X</div>
+            <div class="form-body">
+                <h3 class="tituloConf">Eliminar</h3>
+                <p class="confirmacionP">¿Estas seguro de eliminar el Alumno?</p>
+            </div>
+            <div class="form-footer">
+                <button class="btnNo" type="button" onclick="confirmDelete(false)">No</button>
+                <button class="btnSi" type="button" onclick="confirmDelete(true)">Si</button>
+            </div>
+        </div>
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Clave</th>
+                <th>Matricula</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody id="listaAlumnos"></tbody>
+
+    </table>
+
+    <div class="alert" id="alert">Algo sucedió..</div>
+</body>
+<script src="app.js"></script>
+</html>
